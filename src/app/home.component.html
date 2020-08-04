@@ -1,0 +1,21 @@
+<p>
+  Form Status: {{ profileForm.status }}
+</p>
+<button (click)="toggleLastName()">Show/Hide Last Name</button>
+<button (click)="disableMiddleName()">Enable/Disable Middle Name</button>
+<form [formGroup]="profileForm">
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label >
+    Middle Name:
+    <input type="text" formControlName="middleName">
+  </label>
+
+  <label *ngIf = "showLastName">
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+</form>
